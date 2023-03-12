@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='tarefas_action' model='ir.actions.act_window'>
+        <field name="name">Tarefas</field>
+        <field name="res_model">tarefas</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <menuitem name="Kanban para empresas" id="tarefas_management_base_menu" />
+    <menuitem name="Tarefas" id="tarefas_menu" parent="tarefas_management_base_menu" action="tarefas_action"/>
+
+    <!-- Form View -->
+    <record id="tarefas_view_form" model="ir.ui.view">
+        <field name="name">Tarefas Form</field>
+        <field name="model">tarefas</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                    <group>
+                        <field name="application_date"/>
+                        <field name="applicant_id"/>
+                        <field name="status_id"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="tarefas_view_tree" model="ir.ui.view">
+        <field name="name">Tarefas</field>
+        <field name="model">tarefas</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="status_id"/>
+                <field name="days_from_request"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="tarefas_view_search" model="ir.ui.view">
+        <field name="name">Buscar tarefas</field>
+        <field name="model">tarefas</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="applicant_id"/>
+            </search>
+        </field>
+    </record>
+    <!-- Kanban View -->
+    <record id="tarefas_view_kanban" model="ir.ui.view">
+        <field name="name">Kanban de tarefas</field>
+        <field name="model">tarefas</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status_id">
+                <field name="status_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="oe_kanban_card">
+                                    <div>
+                                        <b>
+                                            <field name="name" />
+                                        </b>
+                                    </div>
+                                    <div class="text-muted">
+                                        <field name="applicant_id" />
+                                    </div>
+                                    <div class="text-muted">
+                                        <field name="application_date" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

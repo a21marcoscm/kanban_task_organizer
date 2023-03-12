@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="new" model="estado.tarefas">
+        <field name="name">Pendiente</field>
+        <field name="description">Tarefa pendiente</field>
+    </record>
+    <record id="procesing" model="estado.tarefas">
+        <field name="name">En proceso</field>
+        <field name="description">Tarefa en proceso</field>
+    </record>
+    <record id="finish" model="estado.tarefas">
+        <field name="name">Finalizada</field>
+        <field name="description">Tarefa finalizada</field>
+    </record>
+    <record id="author_af" model="res.partner">
+        <field name="name">Alexandre Fayolle</field>
+    </record>
+    <record id="author_dr" model="res.partner">
+        <field name="name">Daniel Reis</field>
+    </record>
+    <record id="example1" model="tarefas">
+        <field name="name">Exemplo 1</field>
+        <field name="description">Descrición xerada para o exemplo 1</field>
+        <field name="application_date" eval="time.strftime('2023-03-03')"/>
+        <field name="status_id" ref="new"/>
+        <field name="applicant_id" ref="author_dr"/>
+    </record>
+    <record id="example2" model="tarefas">
+        <field name="name">Exemplo 2</field>
+        <field name="description">Descrición xerada para o exemplo 2</field>
+        <field name="application_date" eval="time.strftime('2023-03-01')"/>
+        <field name="status_id" ref="procesing"/>
+        <field name="applicant_id" ref="author_af"/>
+    </record>
+    <record id="example3" model="tarefas">
+        <field name="name">Exemplo 3</field>
+        <field name="description">Descrición xerada para o exemplo 3</field>
+        <field name="application_date" eval="time.strftime('2023-03-05')"/>
+        <field name="status_id" ref="procesing"/>
+        <field name="applicant_id" ref="author_dr"/>
+    </record>
+    <record id="example4" model="tarefas">
+        <field name="name">Exemplo 4</field>
+        <field name="description">Descrición xerada para o exemplo 4</field>
+        <field name="application_date" eval="time.strftime('2023-03-10')"/>
+        <field name="status_id" ref="finish"/>
+        <field name="applicant_id" ref="author_af"/>
+    </record>
+    
+</odoo>

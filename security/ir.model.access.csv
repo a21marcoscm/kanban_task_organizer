@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_res_partner_workers,res.partner_workers,model_res_partner,group_workers,1,1,1,1
+acl_tarefas,tarefas_default,model_tarefas,,1,0,0,0
+acl_tarefas_workers,tarefas_workers,model_tarefas,group_workers,1,1,1,1
+acl_estado_tarefas,estado.tarefas_default,model_estado_tarefas,,1,0,0,0
+acl_estado_tarefas_workers,estado.tarefas_workers,model_estado_tarefas,group_workers,1,1,1,1

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='estado_tarefas_action' model='ir.actions.act_window'>
+        <field name="name">Estados das tarefas</field>
+        <field name="res_model">estado.tarefas</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Estados das tarefas" id="estado_tarefas_menu" parent="tarefas_management_base_menu" action="estado_tarefas_action"/>
+
+    <!-- Form View -->
+    <record id="estado_tarefas_view_form" model="ir.ui.view">
+        <field name="name">Estado tarefas Form</field>
+        <field name="model">estado.tarefas</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="estado_tarefas_view_tree" model="ir.ui.view">
+        <field name="name">Estados das tarefas</field>
+        <field name="model">estado.tarefas</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>
